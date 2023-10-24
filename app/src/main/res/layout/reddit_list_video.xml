@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/subreddit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:hint="/r/subreddit"
+            android:maxLines="1"
+            app:layout_constrainedWidth="true"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/c1"
+            app:layout_constraintEnd_toStartOf="@+id/author"
+            app:layout_constraintHorizontal_bias="0.011"
+            app:layout_constraintStart_toStartOf="@+id/c1"
+            app:layout_constraintTop_toTopOf="@+id/c1"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="author"
+            android:layout_marginEnd="2dp"
+            android:textAlignment="viewEnd"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/c1"
+            app:layout_constraintEnd_toEndOf="@+id/c1"
+            app:layout_constraintTop_toTopOf="@+id/c1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.player.autoplayer.AutoPlayer
+            android:id="@+id/post_video"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/video_placeholder"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="360dp"
+            app:layout_constraintBottom_toBottomOf="@+id/post_video"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/title_reddit"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:textAlignment="viewStart" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="3dp"
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_reddit">
+
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/upvotes"
+            app:layout_constraintBottom_toBottomOf="@+id/linear"
+            app:layout_constraintStart_toStartOf="@+id/linear"
+            app:layout_constraintTop_toTopOf="@+id/linear" />
+
+        <TextView
+            android:id="@+id/upvotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="@+id/linear"
+            app:layout_constraintStart_toEndOf="@+id/i1"
+            app:layout_constraintTop_toTopOf="@+id/linear" />
+        <ImageView
+            android:id="@+id/share_reddit"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="100dp"
+            android:src="@drawable/share_nodes_red"
+            app:layout_constraintBottom_toBottomOf="@+id/linear"
+            app:layout_constraintEnd_toEndOf="@+id/linear"
+            app:layout_constraintTop_toTopOf="@+id/linear"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorSecondary"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
+
